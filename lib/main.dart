@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'custom_card_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
         //body: Text("Hello World!"),
         body: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
             // children: [
             //   Text("Hello Flutter!", style: TextStyle(color: Colors.white70)),
@@ -44,30 +45,81 @@ class MyApp extends StatelessWidget {
             //     fit: BoxFit.contain,
             //   ),
             // ],
+            // children: [
+            //   ElevatedButton(
+            //     onPressed: () => print("Clicked Elevated Button..."),
+            //     style: ElevatedButton.styleFrom(backgroundColor: Colors.pink),
+            //     child: const Text(
+            //       "Click Me!",
+            //       style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white)
+            //     ),
+            //   ),
+            //   TextButton(
+            //     onPressed: () => print("Clicked Text Button..."),
+            //     child: Text("Click Me Text!",),
+            //       style: TextButton.styleFrom(backgroundColor: Colors.amberAccent)
+            //   ),
+            //   IconButton(
+            //     onPressed: () => print("Clicked Icon Button..."),
+            //     icon: Icon(Icons.arrow_forward_ios, color: Colors.redAccent, size: 40)
+            //   ),
+            // ],
             children: [
-              ElevatedButton(
-                onPressed: () => print("Clicked Elevated Button..."),
-                style: ElevatedButton.styleFrom(backgroundColor: Colors.pink),
+              Container(
+                // width: 300,
+                // height: 200,
+                //padding: EdgeInsets.all(20),
+                padding: EdgeInsets.symmetric(vertical: 20),
+                margin: EdgeInsets.all(40),
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  //color: Colors.blueGrey,
+                  color: Colors.white,
+                  //borderRadius: BorderRadius.horizontal(left: Radius.circular(20)),
+                  borderRadius: BorderRadius.circular(10),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.shade300,
+                      blurRadius: 6,
+                      spreadRadius: 8,
+                      offset: Offset(0, 2),
+                    ),
+                  ],
+                  //border: Border.all(width: 4, color: Colors.black26),
+                  // gradient: LinearGradient(
+                  //   colors: [Colors.red, Colors.white],
+                  //   begin: Alignment.topLeft,
+                  //   end: Alignment.bottomRight,
+                  // ),
+                ),
                 child: Text(
-                  "Click Me!",
-                  style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white)
+                  "Hello!",
+                  style: TextStyle(color: Colors.black87, fontSize: 24),
                 ),
               ),
-              TextButton(
-                onPressed: () => print("Clicked Text Button..."),
-                child: Text("Click Me Text!",),
-                  style: TextButton.styleFrom(backgroundColor: Colors.amberAccent)
+              Padding(
+                padding: EdgeInsetsGeometry.only(top: 48),
+                child: Image.asset('assets/images/jitpack_logo.png'),
               ),
-              IconButton(
-                onPressed: () => print("Clicked Icon Button..."),
-                icon: Icon(Icons.arrow_forward_ios, color: Colors.redAccent, size: 40)
-              ),
+              SizedBox(width: 200, height: 80, child: CustomCardView()),
             ],
           ),
         ),
       ),
     );
   }
+}
+
+Card customCardView() {
+  return Card(
+    //color: Colors.amberAccent,
+    elevation: 5,
+    shadowColor: Colors.blue,
+    child: Align(
+      alignment: Alignment.center,
+      child: Text("Flutter!", style: TextStyle(color: Colors.lightGreen)),
+    ),
+  );
 }
 
 // class MyHomePage extends StatefulWidget {
