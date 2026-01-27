@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sample/screens/home_screen.dart';
 import 'package:sample/zikirmatik/home.dart';
+import 'package:sample/list/home_list.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +16,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: "Roboto"),
-      home: Home(),
+      //home: Home(), //TEST zikirmatik
+      //home: HomeScreen(), //TEST navigation
+      home: HomeList(), //TEST list
     );
   }
 }
